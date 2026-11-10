@@ -1,11 +1,7 @@
-
-
 import tkinter as tk
 
 WIDTH = 610
 HEIGHT = 400
-
-
 
 class GameObject:
     def __init__(self, canvas, item):
@@ -68,8 +64,6 @@ class Ball(GameObject):
             else:
                 self.direction[1] *= -1
 
-
-
 class Paddle(GameObject):
     def __init__(self, canvas, x, y):
         self.width = 100
@@ -98,8 +92,6 @@ class Paddle(GameObject):
         coords = self.get_position()
         center = (coords[0] + coords[2]) / 2
         self.move(x - center)
-
-
 
 class Brick(GameObject):
     COLORS = {1: '#cccccc', 2: '#888888', 3: '#555555'}  
@@ -130,7 +122,6 @@ class BonusBrick(Brick):
         super().__init__(canvas, x, y, 1)
         self.points = 50
         self.canvas.itemconfig(self.item, fill='white')
-
 
 
 class Game(tk.Frame):
